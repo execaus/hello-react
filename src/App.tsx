@@ -1,16 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route, Routes} from 'react-router-dom';
 import './App.css';
-import HelloReact from "./HelloReact";
+import AuthBlock from "./components/AuthBlock";
+import RegisterBlock from "./components/RegisterBlock";
 
 function App() {
-  return (
-    <div className="App">
-      <HelloReact name={"Danil"}/>
-      <HelloReact name={"Artem"}/>
-      <HelloReact name={"Dima"}/>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <Routes>
+                <Route path={"/auth"} element={<AuthBlock />}/>
+                <Route path={"/register"} element={<RegisterBlock />}/>
+            </Routes>
+        </div>
+    )
 }
 
 export default App;
